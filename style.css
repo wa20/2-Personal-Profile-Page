@@ -1,9 +1,10 @@
-/* import google fonts - Ubuntu - 300 */
+/* import google fonts - Ubuntu - 300 / Righteous / Rubik - 300 & 600 bold*/
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
 
-
+/* Page Reset */
 * {
   margin: 0;
   padding: 0;
@@ -14,178 +15,285 @@ ol, ul {
   list-style: none;
 }
 
+/*====================
+- Table of Contents
+
+1 - Sidebar
+
+2 - profile image element
+
+3 - Tag elements
+
+4 - Main Contents (grid-boxes)
+
+5 - Cards Container
+
+6 - Card Elements
+
+7 - Footer
+
+====================*/
+
+
+
 
 html {
     height: 100%;
     /* background: linear-gradient(145deg, #a5c0f3 35%, #3a74ca); */
-    background: linear-gradient(120deg,rgb(6, 184, 190),green);
-}
+     /* background: linear-gradient(25deg,#88b9fa,#3a9b6eda); */
+     background: linear-gradient(25deg,#88b9fa,#05ee81da);
+} 
 
 body {
-    
-    font-family:'Rubik', sans-serif;
-    font-size: 1rem;
-    /* display: flex;
-    flex-wrap: wrap; */
-    
-
+    display: flex;
+    flex-wrap: wrap;  
 }
 
 
 /*=========
- Sidebar 
+1 - Sidebar 
  =========*/
 
 
 .sidebar {
-    background: rgba(255, 255, 255, 0.7);
+    background: linear-gradient(-0deg,#ffffff 84%,#a3a1a19d 26%);
+    backdrop-filter:blur(200rem);
     flex: 1 1 20%;
-    min-width: 400px;
+    min-width: 300px;
     padding: 3em;
     backdrop-filter: blur(2.5rem) ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
     
-
 }
+/* transition from top bar to sidebar */
+@media(min-width: 1500px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100%;
 
-aside {
-    display: grid;
-    grid-template-columns:1fr 7fr ;
-    grid-template-rows: 100px;
-  
-
+  }
 }
-
-img {
-  width: 90px;
-  height: 90px;
-  position: absolute;
-  object-fit: contain;
-  border-radius: 50%;
-  z-index: 2;
-  box-shadow: rgba(141, 140, 138, 0.945);
-
-}
-
-/* .image-space {
-  background: thistle;
-  position: absolute;
-  max-width: 100%;
-  top: 50%;
-  left: 50%;
-  transform:translate(-50%, -50%) ;
-  object-fit: contain;
-  
-
-} */
-
-/* .image-container {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: chocolate;
-
-
-} */
-
-
-.tags {
-display: flex;
-justify-content: space-around;
-align-items: center;
-font-family: 'Rubik', sans-serif;
-font-size: 1.2rem;
-font-weight: 100;
-
-
-
-
-}
-
-.nav {
-
-
-
-}
-
-
 
 /*=========
- Body
+2 - Profile image 
  =========*/
 
- .main-content{
-   padding: 10%;
-   flex: 1 1 80%;
-   min-height: 100vh;
+.profile-image {
+  background: thistle;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0px 0px px 1px #3a393991;
   
-  
- }
 
- .mosiac-container {
+} 
 
-    display: grid;
-    /* height: 100%; */
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    grid-gap:20px;
-
- }
-
-.cards {
-background: rgba(238, 87, 117, 0.767);
-font-family: 'Rightous' cursive ;
-color: white;
-font-size: 2rem;
-display: flex;
-justify-content: center;
-align-items: center;
-
-
-
+nav.profile-image {
+  background-image: url(./Assets/profile-image.jpg);
+  background-size: cover;
+  background-position: top;
+  background-blend-mode:normal;
 }
 
-/*========
-cards 
- ========*/
+/*=========
+ 3 - Tag elements 
+ =========*/
 
+.nav-tags {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+
+grid-gap: 10px;
+align-items: center;
+font-family: 'Rubik', sans-serif;
+color: rgb(88, 87, 87);
+font-size: 1.3rem;
+font-weight: 100;
+}
+
+@media(min-width: 1500px) {
+  .nav-tags {
+display: flex;
+flex-direction: column;
+align-items: center;
+align-content: center;
+justify-content: space-around;
+min-height: 60vh;
+margin-bottom: 40px;
+  }
+}  
+
+.nav {
+  font-family:'Rubik', sans-serif;  
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.2rem;  
+}
+
+/*=========
+4 - Main Contents container (grid-boxes)
+=========*/
+
+h2 {
+  color: white;
+  font-family:'Rubik', sans-serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.main-content{
+   padding: 10%;
+   flex: 1 1 80%;
+   min-height: 100%;
+ }
+
+.mosiac-container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    grid-gap:30px;
+    height: 100%;
+ }
+
+/*========
+5 - Cards Container & Functions
+========*/
+
+.cards {
+    background: rgba(105, 172, 235, 0.767);
+    box-shadow: rgba(141, 140, 138, 0.945);
+    font-family: 'Righteous', cursive;
+    cursor: pointer;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 1.5px rgba(66, 66, 66, 0.548);
+    z-index: 1;
+}
+
+
+.cards:hover {
+  background-color:whitesmoke;
+  background-blend-mode:multiply;
+  background-position:center;
+  opacity: 1;
+  transition: all ease-in-out 500ms;
+  
+}
+
+
+/*========
+6 - card elements
+========*/
 
 .card-one {
-  grid-area: 1/1/3/3;
-
+  grid-area:1 / 1 / 4 / 6;
+  background-image: url(./Assets/mount-fuji-sunset.jpg) ;
+  background-size: cover;
+  background-position: top;
+  background-blend-mode: multiply;
+  
 }
 
 .card-two {
-  grid-area: 1 / 3 / 4 / 6;
+  grid-area: 1 / 6 / 3 / 9;
+  background-image: url(./Assets/Multi-coloured-building.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 
 }
 
 .card-three {
-  grid-area: 3 / 1 / 5 / 3;
-
+  grid-area: 3 / 6 / 5 / 9;
+  background-image: url(./Assets/Criss-cross-buildings.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 }
 
 .card-four {
-  grid-area: 4 / 3 / 5 / 4;
+  grid-area: 4 / 4 / 5 / 6;
+  background-image: url(./Assets/Orange-Cab.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 
 }
 
 .card-five {
-  grid-area: 4 / 4 / 7 / 6;
+  grid-area: 4 / 1 / 7 / 4;
+  background-image: url(./Assets/LED-Image.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 
 }
 
 .card-six{
-  grid-area: 5 / 1 / 7 / 4;
+  grid-area:5 / 4 / 7 / 9;
+  background-image: url(./Assets/Black-Cab.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 
 }
 
 .card-seven {
-  grid-area: 7 / 3 / 9 / 6;
+  grid-area: 7 / 1 / 10 / 6;
+  background-image: url(./Assets/Red-Phonebox.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 
 }
 
 .card-eight {
 
-  grid-area: 7 / 1 / 9 / 3;
+  grid-area: 7 / 6 / 10 / 9;
+  background-image: url(./Assets/Sunset.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 
 }
+
+
+/*========
+7 - Footer container
+========*/
+
+ footer {
+  background: linear-gradient(125deg,#ffffff 80%,#a3a1a19d 20%);
+   position: fixed;
+   backdrop-filter:blur(200rem);
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding: 1.5rem;
+   z-index: 2;
+ }
+
+ .footer-links {
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   
+ }
+
+
+ /*========
+8 - Footer Elements
+========*/
