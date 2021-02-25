@@ -16,7 +16,7 @@ ol, ul {
 }
 
 /*====================
-- Table of Contents -
+- Table of Contents
 
 1 - Sidebar
 
@@ -26,26 +26,19 @@ ol, ul {
 
 4 - Main Contents (grid-boxes)
 
-5 - About Me Section
+5 - Cards Container
 
-6 - Mosiac Container (grid-boxes)
+6 - Card Elements
 
-7 - Cards Container & Functions
-
-8 - card elements
-
-9 - About Me Section
-
-10 - Footer container
-
-11 - Footer Elements 
+7 - Footer
 
 ====================*/
 
 
+
+
 html {
     min-height: 100%;
-    min-width: 100%;
     /* background: linear-gradient(145deg, #a5c0f3 35%, #3a74ca); */
      /* background: linear-gradient(25deg,#88b9fa,#3a9b6eda); */
      background: linear-gradient(25deg,#88b9fa,#05ee81da);
@@ -53,8 +46,16 @@ html {
 
 body {
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;  
 }
+
+/* linked to a main tag in html, did not work for intended purpose */
+/* .full-page {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+
+} */
 
 /*=========
 1 - Sidebar 
@@ -62,11 +63,11 @@ body {
 
 
 .sidebar {
-    background: linear-gradient(-0deg,#ffffff 80%,#a3a1a19d 20%);
+    background: linear-gradient(-0deg,#ffffff 84%,#a3a1a19d 26%);
     backdrop-filter:blur(200rm);
     flex: 1 1 20%;
-    /* min-width: auto;
-    padding: 3em; */
+    /* min-width: 300px; */
+    /* padding: 3em; */
     backdrop-filter: blur(2.5rem) ;
     display: flex;
     justify-content: space-around;
@@ -93,6 +94,19 @@ body {
   }
 }
 
+/* @media(max-width: 650px) {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 300px;
+    padding: 2em;
+
+
+  }
+} */
+
 /*=========
 2 - Profile image 
  =========*/
@@ -104,7 +118,6 @@ body {
   border-radius: 50%;
   z-index: 3;
   box-shadow: 0px 0px px 1px #3a393991;
-  
 } 
 
 nav.profile-image {
@@ -112,9 +125,10 @@ nav.profile-image {
   background-size: cover;
   background-position: top;
   background-blend-mode:normal;
-  margin-top: 6em;
+  margin-top: auto;
   
 }
+
 
 
 /*=========
@@ -130,8 +144,12 @@ font-family: 'Rubik', sans-serif;
 color: rgb(88, 87, 87);
 font-size: 1.3rem;
 font-weight: 100;
-margin-top: auto;
-margin-bottom: auto;
+
+
+/* try to push the nav-items up the page */
+/* position: sticky; 
+top: 0px; */
+
 }
 
 @media(min-width: 1200px) {
@@ -141,8 +159,8 @@ flex-direction: column;
 align-items: center;
 align-content: center;
 justify-content: space-around;
-min-height: 40vh;
-margin-top: 8em; 
+min-height: 60vh;
+margin-top: auto;
 margin-bottom: auto; /* try to push the nav-items up the page */
   }
 }  
@@ -153,9 +171,7 @@ margin-bottom: auto; /* try to push the nav-items up the page */
 }
 
 p {
-  font-size: 1.2rem;
-  font-family: 'Rubik', sans-serif;  
-  
+  font-size: 1.2rem;  
 }
 
 .nav-item:hover {
@@ -166,60 +182,47 @@ p {
 
 }
 
+
 /*=========
-4 - Main Contents container
+4 - Main Contents container (grid-boxes)
 =========*/
 
 h2 {
   color: white;
   font-family:'Rubik', sans-serif;
   font-size: 40px;
-  margin-top: 2.5em;
-  margin-bottom: 1.5em;
-  
+  margin-bottom: 20px;
 }
 .main-content{
    padding: 10%;
    flex: 1 1 80%;
-   /* margin-left: auto;
-   margin-right: auto; */
-   margin-bottom: auto;
+   margin-left: auto;
+   margin-right: auto;
    min-height: 100%;
   
+
  }
-
-
-
-/*=========
-5 - About Me Section
-=========*/
-
-.about-container {
-  margin-bottom: 4em;
-  /* position: relative;
-  margin-top: auto; */
-}
-
-
-
-
-
-/*=========
-6 - Mosiac Container (grid-boxes)
-=========*/
 
 .mosiac-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(8, 1fr));
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 1fr);
     grid-gap:30px;
-    min-height: 100%;
+    height: 100%;
  }
 
- 
+ /* @media(max-width: 600px) {
+  .mosiac-container {
+    grid-template-rows: repeat(auto-fill, minmax(80px, 1fr))
+
+  
+    }
+
+  } */
+
 
 /*========
-7 - Cards Container & Functions
+5 - Cards Container & Functions
 ========*/
 
 .cards {
@@ -245,17 +248,12 @@ h2 {
   /* background-position:center; */
   transition: all ease-in-out 500ms;
   
+  
 }
 
-@media (max-width: 860px) {
-.cards {
-  font-size: 1.8rem;
-}
-
-}
 
 /*========
-8 - card elements
+6 - card elements
 ========*/
 
 .card-one {
@@ -329,10 +327,33 @@ h2 {
 
 }
 
+/*========
+7 - About Me Section
+========*/
+
+article {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.about-me {
+  display: grid;
+  grid-area: 9 / 1 / 10 / 9;
+  
+  flex: 1 1 80%;
+  
+}
+
+.about-blurp {
+  display: flex;
+}
+
+
 
 
 /*========
-10 - Footer container
+7 - Footer container
 ========*/
 
  footer {
@@ -354,32 +375,30 @@ h2 {
  }
 
 
- .footer-nav {
-   width: 50px;
-   height: 20px;
- }
-
  /*========
-11 - Footer Elements
+8 - Footer Elements
 ========*/
 
 
 
-.nav1 {
+/*========
+9 - About Me Section
+========*/
 
-
-}
-
-.nav2 {
-
-
-}
-
-.nav3 {
-
+article {
+  display: flex;
+  flex-direction: column;
 
 }
 
-.nav4 {
+.about-me {
+  display: grid;
+  grid-area: 9 / 1 / 10 / 9;
+  
+  flex: 1 1 80%;
+  
+}
 
+.about-blurp {
+  display: flex;
 }
