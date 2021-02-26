@@ -432,7 +432,7 @@ h2 {
    backdrop-filter:blur(15px);
    left: 0;
    bottom: 0;
-   width: 100%;
+   min-width: 100vw;
    padding: 1.5rem;
    z-index: 3;
  }
@@ -444,11 +444,28 @@ h2 {
    
  }
 
-
  .footer-nav {
-   width: 50px;
-   height: 20px;
+   margin: 10px;
  }
+
+
+ @media(max-width: 600px){
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+   
+  }
+}
+
+
+@media(max-width: 600px){
+  footer {
+    background: white;
+   
+   
+  }
+}
 
  /*========
 11 - Footer Elements
