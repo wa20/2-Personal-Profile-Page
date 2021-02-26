@@ -3,8 +3,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap'); /* goldman Regular 400 */
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap'); /* goldman Regular 700 */
+
+
+
 
 /* Page Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -44,8 +50,8 @@ ol, ul {
 
 
 html {
-    min-height: 100%;
-    min-width: 100%;
+    min-height: 100vh;
+    min-width: 100vw;
     /* background: linear-gradient(145deg, #a5c0f3 35%, #3a74ca); */
      /* background: linear-gradient(25deg,#88b9fa,#3a9b6eda); */
      background: linear-gradient(25deg,#88b9fa,#05ee81da);
@@ -61,41 +67,64 @@ body {
  =========*/
 
 
-.sidebar {
+@media(min-width: 600px) and (max-width: 1200px){
+  .sidebar {
     background: linear-gradient(-0deg,#ffffff 80%,#a3a1a19d 20%);
     backdrop-filter:blur(200rm);
     flex: 1 1 20%;
-    /* min-width: auto;
-    padding: 3em; */
     backdrop-filter: blur(2.5rem) ;
     display: flex;
     justify-content: space-around;
     align-items: center;
     z-index: 2;
-    
-
-
-    /* making the bar at the top sticky */
-    /* position: sticky;
-    top: 0px; */
-    
+  
+  }  
 }
 /* transition from top bar to sidebar */
-@media(min-width: 1200px) {
+@media(min-width: 1200px){
   .sidebar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     min-height: 100%;
-    
+    background: linear-gradient(-0deg,#ffffff 80%,#a3a1a19d 20%);
+    backdrop-filter:blur(200rm);
+    flex: 1 1 20%;
+    z-index: 2;
 
   }
 }
 
+
+@media(max-width: 600px){
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100vw;
+    background: linear-gradient(-0deg,#ffffff 70%,#a3a1a19d 30%);
+    backdrop-filter:blur(200rm);
+
+    z-index: 2;
+
+  }
+}
+
+
+
 /*=========
 2 - Profile image 
  =========*/
+.image-name {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
 
 .profile-image {
   background: thistle;
@@ -103,7 +132,7 @@ body {
   height: 130px;
   border-radius: 50%;
   z-index: 3;
-  box-shadow: 0px 0px px 1px #3a393991;
+  box-shadow: 0px 0px 10px 3px #3a393991;
   
 } 
 
@@ -112,52 +141,106 @@ nav.profile-image {
   background-size: cover;
   background-position: top;
   background-blend-mode:normal;
-  margin-top: 6em;
+  margin-top: 3em;
   
 }
+
+.name {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  font-family: 'goldman', cursive;
+  font-weight: 100;
+  color: rgb(126, 2, 2);
+
+}
+
+span {
+  font-family: 'Goldman', cursive;
+  font-weight: 700;
+  color: hsl(0, 40%, 4%);
+}
+
+
+@media(min-width: 600px) and (max-width: 1200px) {
+  nav.profile-image {
+    margin-top: 2.0em;
+
+  }
+}
+
+
+@media(max-width: 600px){
+  nav.profile-image {
+    margin-top: 8.0em;
+  
+  }
+}
+
 
 
 /*=========
  3 - Nav - Tag elements 
  =========*/
 
-.nav-tags {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-grid-gap: 10px;
-align-items: center;
-font-family: 'Rubik', sans-serif;
-color: rgb(88, 87, 87);
-font-size: 1.3rem;
-font-weight: 100;
-margin-top: auto;
-margin-bottom: auto;
+ @media(min-width: 600px) and (max-width: 1200px) {
+    .nav-tags {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    color: rgb(88, 87, 87);
+    font-size: 1.5rem;
+    font-weight: 100;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
 }
+
 
 @media(min-width: 1200px) {
   .nav-tags {
-display: flex;
-flex-direction: column;
-align-items: center;
-align-content: center;
-justify-content: space-around;
-min-height: 40vh;
-margin-top: 8em; 
-margin-bottom: auto; /* try to push the nav-items up the page */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    min-height: 40vh;
+    margin-top: 8em; 
+    margin-bottom: auto; /* try to push the nav-items up the page */
+    font-family: 'Rubik', sans-serif;
+    color: rgb(88, 87, 87);
+    font-size: 1.5rem;
+    font-weight: 100;
+
   }
 }  
 
-.nav {
-  font-family:'Rubik', sans-serif;  
-  font-size: 2rem;
+
+@media(max-width: 600px) {
+  .nav-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    min-height: 30vh;
+    margin-top: 3em; 
+    margin-bottom: 3em; /* try to push the nav-items up the page */
+   
+
+  }
 }
 
-p {
-  font-size: 1.2rem;
-  font-family: 'Rubik', sans-serif;  
-  
+a:link, a:visited  {
+  font-family:'Rubik', sans-serif;
+  text-decoration: none;
+  color: rgb(88, 87, 87);
+  font-size: 1.5rem;
+  font-weight: 100;
 }
 
+ 
 .nav-item:hover {
   cursor: pointer;
   font-size: 1.4rem;
@@ -176,8 +259,14 @@ h2 {
   font-size: 40px;
   margin-top: 2.5em;
   margin-bottom: 1.5em;
-  
 }
+
+  p {
+    font-size: 1.2rem;
+    font-family: 'Rubik', sans-serif;  
+    
+  }
+  
 .main-content{
    padding: 10%;
    flex: 1 1 80%;
@@ -212,7 +301,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(8, 1fr));
     grid-template-rows: repeat(8, 1fr);
-    grid-gap:30px;
+    grid-gap:15px;
     min-height: 100%;
  }
 
@@ -247,12 +336,13 @@ h2 {
   
 }
 
-@media (max-width: 860px) {
+@media (max-width: 600px) {
 .cards {
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+}
 }
 
-}
+
 
 /*========
 8 - card elements
@@ -336,8 +426,9 @@ h2 {
 ========*/
 
  footer {
-  background: linear-gradient(125deg,#ffffff 80%,#a3a1a19d 20%);
-   position: fixed;
+  background: linear-gradient(125deg,#ffffff 80%,#5f5b5bbd 20%);
+   /* min-width: 100%; */
+  position: relative;
    backdrop-filter:blur(15px);
    left: 0;
    bottom: 0;
@@ -364,22 +455,3 @@ h2 {
 ========*/
 
 
-
-.nav1 {
-
-
-}
-
-.nav2 {
-
-
-}
-
-.nav3 {
-
-
-}
-
-.nav4 {
-
-}
