@@ -202,7 +202,7 @@ span {
     justify-content: space-around;
     min-height: 40vh;
     margin-top: 8em; 
-    margin-bottom: auto; /* try to push the nav-items up the page */
+    margin-bottom: auto; 
     font-family: 'Rubik', sans-serif;
     color: rgb(88, 87, 87);
     font-size: 1.5rem;
@@ -221,7 +221,7 @@ span {
     justify-content: space-around;
     min-height: 30vh;
     margin-top: 3em; 
-    margin-bottom: 3em; /* try to push the nav-items up the page */
+    margin-bottom: 3em; 
    
 
   }
