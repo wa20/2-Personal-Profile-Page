@@ -7,8 +7,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap'); /* goldman Regular 700 */
 
 
-
-
 /* Page Reset */
 
 * {
@@ -45,7 +43,6 @@ ol, ul {
 10 - Footer container
 
 ====================*/
-
 
 html {
     min-height: 100vh;
@@ -110,7 +107,6 @@ body {
 
   }
 }
-
 
 
 /*=========
@@ -277,8 +273,6 @@ h2 {
   
  }
 
-
-
 /*=========
 5 - About Me Section
 =========*/
@@ -288,7 +282,6 @@ h2 {
   /* position: relative;
   margin-top: auto; */
 }
-
 
 
 /*=========
@@ -304,7 +297,6 @@ h2 {
  }
 
  
-
 /*========
 7 - Cards Container & Functions
 ========*/
@@ -428,15 +420,12 @@ a:link, a:visited {
 
 }
 
-
-
 /*========
 10 - Footer container
 ========*/
 
  footer {
   background: linear-gradient(125deg,#ffffff 85%,#e4dfdf9a 15%);
-   /* min-width: 100%; */
   position: relative;
    backdrop-filter:blur(15px);
    left: 0;
