@@ -332,6 +332,8 @@ a:link, a:visited {
   background-blend-mode:multiply;
   background-position:center;
   transition: all ease-in-out 500ms;
+  transform: scale(1.2);
+  z-index: 2;
   
 }
 
@@ -348,7 +350,7 @@ a:link, a:visited {
 
 .card-one {
   grid-area:1 / 1 / 4 / 6;
-  background-image: url(./Assets/Horiseon-Page-Refactor.png) ;
+  background-image: url(./Assets/mount-fuji-sunset.jpg) ;
   background-size: cover;
   background-position: top;
   background-blend-mode: multiply;
@@ -359,7 +361,7 @@ a:link, a:visited {
   grid-area: 1 / 6 / 3 / 9;
   background-image: url(./Assets/Multi-coloured-building.jpg) ;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-blend-mode: multiply;
 
 }
@@ -368,7 +370,7 @@ a:link, a:visited {
   grid-area: 3 / 6 / 5 / 9;
   background-image: url(./Assets/Criss-cross-buildings.jpg) ;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-blend-mode: multiply;
 }
 
@@ -385,7 +387,7 @@ a:link, a:visited {
   grid-area: 4 / 1 / 7 / 4;
   background-image: url(./Assets/LED-Image.jpg) ;
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-blend-mode: multiply;
 
 }
